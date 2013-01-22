@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             this.pnl_Main = new System.Windows.Forms.Panel();
+            this.pnl_Electricity = new System.Windows.Forms.Panel();
+            this.btn_Electricity_back = new System.Windows.Forms.Button();
+            this.lbl_Electricity_currentPageDispaly = new System.Windows.Forms.Label();
+            this.lbl_SwitchOffTime = new System.Windows.Forms.Label();
+            this.lbl_SwitchOnTime = new System.Windows.Forms.Label();
+            this.lbl_CurrentBill = new System.Windows.Forms.Label();
+            this.lbl_CurrentUsage = new System.Windows.Forms.Label();
+            this.prgBar_CurrentUsage = new System.Windows.Forms.ProgressBar();
             this.lbl_Main_CurrentPageDisplay = new System.Windows.Forms.Label();
             this.btn_CurrenUsage = new System.Windows.Forms.Button();
             this.btn_Heating = new System.Windows.Forms.Button();
             this.btn_HotWater = new System.Windows.Forms.Button();
             this.btn_Electricity = new System.Windows.Forms.Button();
-            this.pnl_Electricity = new System.Windows.Forms.Panel();
-            this.prgBar_ = new System.Windows.Forms.ProgressBar();
-            this.lbl_CurrentUsage = new System.Windows.Forms.Label();
-            this.lbl_CurrentBill = new System.Windows.Forms.Label();
-            this.lbl_SwitchOnTime = new System.Windows.Forms.Label();
-            this.lbl_SwitchOffTime = new System.Windows.Forms.Label();
-            this.lbl_Electricity_currentPageDispaly = new System.Windows.Forms.Label();
+            this.lbl_Electricity_CurrentUsage_value = new System.Windows.Forms.Label();
+            this.lbl_Electricity_ON_value = new System.Windows.Forms.Label();
+            this.lbl_Electricity_OFF_value = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             this.pnl_Electricity.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +63,96 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(756, 593);
             this.pnl_Main.TabIndex = 0;
+            // 
+            // pnl_Electricity
+            // 
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_OFF_value);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_ON_value);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_CurrentUsage_value);
+            this.pnl_Electricity.Controls.Add(this.btn_Electricity_back);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_currentPageDispaly);
+            this.pnl_Electricity.Controls.Add(this.lbl_SwitchOffTime);
+            this.pnl_Electricity.Controls.Add(this.lbl_SwitchOnTime);
+            this.pnl_Electricity.Controls.Add(this.lbl_CurrentBill);
+            this.pnl_Electricity.Controls.Add(this.lbl_CurrentUsage);
+            this.pnl_Electricity.Controls.Add(this.prgBar_CurrentUsage);
+            this.pnl_Electricity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Electricity.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_Electricity.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Electricity.Name = "pnl_Electricity";
+            this.pnl_Electricity.Size = new System.Drawing.Size(756, 593);
+            this.pnl_Electricity.TabIndex = 5;
+            this.pnl_Electricity.Visible = false;
+            this.pnl_Electricity.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Electricity_Paint);
+            // 
+            // btn_Electricity_back
+            // 
+            this.btn_Electricity_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Electricity_back.Location = new System.Drawing.Point(607, 503);
+            this.btn_Electricity_back.Name = "btn_Electricity_back";
+            this.btn_Electricity_back.Size = new System.Drawing.Size(146, 84);
+            this.btn_Electricity_back.TabIndex = 6;
+            this.btn_Electricity_back.Text = "button1";
+            this.btn_Electricity_back.UseVisualStyleBackColor = true;
+            this.btn_Electricity_back.Click += new System.EventHandler(this.btn_Electricity_back_Click);
+            // 
+            // lbl_Electricity_currentPageDispaly
+            // 
+            this.lbl_Electricity_currentPageDispaly.AutoSize = true;
+            this.lbl_Electricity_currentPageDispaly.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Electricity_currentPageDispaly.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_Electricity_currentPageDispaly.Location = new System.Drawing.Point(339, 528);
+            this.lbl_Electricity_currentPageDispaly.Name = "lbl_Electricity_currentPageDispaly";
+            this.lbl_Electricity_currentPageDispaly.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_currentPageDispaly.TabIndex = 5;
+            this.lbl_Electricity_currentPageDispaly.Text = "label1";
+            // 
+            // lbl_SwitchOffTime
+            // 
+            this.lbl_SwitchOffTime.AutoSize = true;
+            this.lbl_SwitchOffTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SwitchOffTime.Location = new System.Drawing.Point(12, 464);
+            this.lbl_SwitchOffTime.Name = "lbl_SwitchOffTime";
+            this.lbl_SwitchOffTime.Size = new System.Drawing.Size(100, 37);
+            this.lbl_SwitchOffTime.TabIndex = 4;
+            this.lbl_SwitchOffTime.Text = "label1";
+            // 
+            // lbl_SwitchOnTime
+            // 
+            this.lbl_SwitchOnTime.AutoSize = true;
+            this.lbl_SwitchOnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SwitchOnTime.Location = new System.Drawing.Point(12, 322);
+            this.lbl_SwitchOnTime.Name = "lbl_SwitchOnTime";
+            this.lbl_SwitchOnTime.Size = new System.Drawing.Size(100, 37);
+            this.lbl_SwitchOnTime.TabIndex = 3;
+            this.lbl_SwitchOnTime.Text = "label1";
+            // 
+            // lbl_CurrentBill
+            // 
+            this.lbl_CurrentBill.AutoSize = true;
+            this.lbl_CurrentBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentBill.Location = new System.Drawing.Point(12, 185);
+            this.lbl_CurrentBill.Name = "lbl_CurrentBill";
+            this.lbl_CurrentBill.Size = new System.Drawing.Size(100, 37);
+            this.lbl_CurrentBill.TabIndex = 2;
+            this.lbl_CurrentBill.Text = "label1";
+            // 
+            // lbl_CurrentUsage
+            // 
+            this.lbl_CurrentUsage.AutoSize = true;
+            this.lbl_CurrentUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 61);
+            this.lbl_CurrentUsage.Name = "lbl_CurrentUsage";
+            this.lbl_CurrentUsage.Size = new System.Drawing.Size(100, 37);
+            this.lbl_CurrentUsage.TabIndex = 1;
+            this.lbl_CurrentUsage.Text = "label1";
+            // 
+            // prgBar_CurrentUsage
+            // 
+            this.prgBar_CurrentUsage.Location = new System.Drawing.Point(381, 61);
+            this.prgBar_CurrentUsage.Name = "prgBar_CurrentUsage";
+            this.prgBar_CurrentUsage.Size = new System.Drawing.Size(363, 41);
+            this.prgBar_CurrentUsage.TabIndex = 0;
             // 
             // lbl_Main_CurrentPageDisplay
             // 
@@ -124,73 +218,33 @@
             this.btn_Electricity.UseVisualStyleBackColor = false;
             this.btn_Electricity.Click += new System.EventHandler(this.btn_Electricity_Click);
             // 
-            // pnl_Electricity
+            // lbl_Electricity_CurrentUsage_value
             // 
-            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_currentPageDispaly);
-            this.pnl_Electricity.Controls.Add(this.lbl_SwitchOffTime);
-            this.pnl_Electricity.Controls.Add(this.lbl_SwitchOnTime);
-            this.pnl_Electricity.Controls.Add(this.lbl_CurrentBill);
-            this.pnl_Electricity.Controls.Add(this.lbl_CurrentUsage);
-            this.pnl_Electricity.Controls.Add(this.prgBar_);
-            this.pnl_Electricity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Electricity.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Electricity.Name = "pnl_Electricity";
-            this.pnl_Electricity.Size = new System.Drawing.Size(756, 593);
-            this.pnl_Electricity.TabIndex = 5;
-            this.pnl_Electricity.Visible = false;
-            this.pnl_Electricity.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Electricity_Paint);
+            this.lbl_Electricity_CurrentUsage_value.AutoSize = true;
+            this.lbl_Electricity_CurrentUsage_value.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_Electricity_CurrentUsage_value.Location = new System.Drawing.Point(381, 185);
+            this.lbl_Electricity_CurrentUsage_value.Name = "lbl_Electricity_CurrentUsage_value";
+            this.lbl_Electricity_CurrentUsage_value.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_CurrentUsage_value.TabIndex = 7;
+            this.lbl_Electricity_CurrentUsage_value.Text = "label1";
             // 
-            // prgBar_
+            // lbl_Electricity_ON_value
             // 
-            this.prgBar_.Location = new System.Drawing.Point(381, 61);
-            this.prgBar_.Name = "prgBar_";
-            this.prgBar_.Size = new System.Drawing.Size(218, 73);
-            this.prgBar_.TabIndex = 0;
+            this.lbl_Electricity_ON_value.AutoSize = true;
+            this.lbl_Electricity_ON_value.Location = new System.Drawing.Point(381, 322);
+            this.lbl_Electricity_ON_value.Name = "lbl_Electricity_ON_value";
+            this.lbl_Electricity_ON_value.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_ON_value.TabIndex = 8;
+            this.lbl_Electricity_ON_value.Text = "label1";
             // 
-            // lbl_CurrentUsage
+            // lbl_Electricity_OFF_value
             // 
-            this.lbl_CurrentUsage.AutoSize = true;
-            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 89);
-            this.lbl_CurrentUsage.Name = "lbl_CurrentUsage";
-            this.lbl_CurrentUsage.Size = new System.Drawing.Size(35, 13);
-            this.lbl_CurrentUsage.TabIndex = 1;
-            this.lbl_CurrentUsage.Text = "label1";
-            // 
-            // lbl_CurrentBill
-            // 
-            this.lbl_CurrentBill.AutoSize = true;
-            this.lbl_CurrentBill.Location = new System.Drawing.Point(12, 213);
-            this.lbl_CurrentBill.Name = "lbl_CurrentBill";
-            this.lbl_CurrentBill.Size = new System.Drawing.Size(35, 13);
-            this.lbl_CurrentBill.TabIndex = 2;
-            this.lbl_CurrentBill.Text = "label1";
-            // 
-            // lbl_SwitchOnTime
-            // 
-            this.lbl_SwitchOnTime.AutoSize = true;
-            this.lbl_SwitchOnTime.Location = new System.Drawing.Point(12, 350);
-            this.lbl_SwitchOnTime.Name = "lbl_SwitchOnTime";
-            this.lbl_SwitchOnTime.Size = new System.Drawing.Size(35, 13);
-            this.lbl_SwitchOnTime.TabIndex = 3;
-            this.lbl_SwitchOnTime.Text = "label1";
-            // 
-            // lbl_SwitchOffTime
-            // 
-            this.lbl_SwitchOffTime.AutoSize = true;
-            this.lbl_SwitchOffTime.Location = new System.Drawing.Point(12, 492);
-            this.lbl_SwitchOffTime.Name = "lbl_SwitchOffTime";
-            this.lbl_SwitchOffTime.Size = new System.Drawing.Size(35, 13);
-            this.lbl_SwitchOffTime.TabIndex = 4;
-            this.lbl_SwitchOffTime.Text = "label1";
-            // 
-            // lbl_Electricity_currentPageDispaly
-            // 
-            this.lbl_Electricity_currentPageDispaly.AutoSize = true;
-            this.lbl_Electricity_currentPageDispaly.Location = new System.Drawing.Point(339, 556);
-            this.lbl_Electricity_currentPageDispaly.Name = "lbl_Electricity_currentPageDispaly";
-            this.lbl_Electricity_currentPageDispaly.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Electricity_currentPageDispaly.TabIndex = 5;
-            this.lbl_Electricity_currentPageDispaly.Text = "label1";
+            this.lbl_Electricity_OFF_value.AutoSize = true;
+            this.lbl_Electricity_OFF_value.Location = new System.Drawing.Point(374, 464);
+            this.lbl_Electricity_OFF_value.Name = "lbl_Electricity_OFF_value";
+            this.lbl_Electricity_OFF_value.Size = new System.Drawing.Size(102, 37);
+            this.lbl_Electricity_OFF_value.TabIndex = 9;
+            this.lbl_Electricity_OFF_value.Text = "label2";
             // 
             // DEACT
             // 
@@ -220,12 +274,16 @@
         private System.Windows.Forms.Button btn_CurrenUsage;
         private System.Windows.Forms.Button btn_Heating;
         private System.Windows.Forms.Panel pnl_Electricity;
-        private System.Windows.Forms.ProgressBar prgBar_;
+        private System.Windows.Forms.ProgressBar prgBar_CurrentUsage;
         private System.Windows.Forms.Label lbl_CurrentBill;
         private System.Windows.Forms.Label lbl_CurrentUsage;
         private System.Windows.Forms.Label lbl_SwitchOffTime;
         private System.Windows.Forms.Label lbl_SwitchOnTime;
         private System.Windows.Forms.Label lbl_Electricity_currentPageDispaly;
+        private System.Windows.Forms.Button btn_Electricity_back;
+        private System.Windows.Forms.Label lbl_Electricity_CurrentUsage_value;
+        private System.Windows.Forms.Label lbl_Electricity_OFF_value;
+        private System.Windows.Forms.Label lbl_Electricity_ON_value;
     }
 }
 
