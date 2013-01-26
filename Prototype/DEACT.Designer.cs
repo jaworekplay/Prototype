@@ -30,6 +30,14 @@
         {
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Electricity = new System.Windows.Forms.Panel();
+            this.rdbtn_Electricity_Status_value_OFF = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Electricity_Status_value_ON = new System.Windows.Forms.RadioButton();
+            this.lbl_Electricity_Status = new System.Windows.Forms.Label();
+            this.lbl_Electricity_Season_value = new System.Windows.Forms.Label();
+            this.lbl_Electricity_Season = new System.Windows.Forms.Label();
+            this.lbl_Electricity_OFF_value = new System.Windows.Forms.Label();
+            this.lbl_Electricity_ON_value = new System.Windows.Forms.Label();
+            this.lbl_Electricity_CurrentUsage_value = new System.Windows.Forms.Label();
             this.btn_Electricity_back = new System.Windows.Forms.Button();
             this.lbl_Electricity_currentPageDispaly = new System.Windows.Forms.Label();
             this.lbl_SwitchOffTime = new System.Windows.Forms.Label();
@@ -42,9 +50,6 @@
             this.btn_Heating = new System.Windows.Forms.Button();
             this.btn_HotWater = new System.Windows.Forms.Button();
             this.btn_Electricity = new System.Windows.Forms.Button();
-            this.lbl_Electricity_CurrentUsage_value = new System.Windows.Forms.Label();
-            this.lbl_Electricity_ON_value = new System.Windows.Forms.Label();
-            this.lbl_Electricity_OFF_value = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             this.pnl_Electricity.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +71,11 @@
             // 
             // pnl_Electricity
             // 
+            this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_Status_value_OFF);
+            this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_Status_value_ON);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_Status);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_Season_value);
+            this.pnl_Electricity.Controls.Add(this.lbl_Electricity_Season);
             this.pnl_Electricity.Controls.Add(this.lbl_Electricity_OFF_value);
             this.pnl_Electricity.Controls.Add(this.lbl_Electricity_ON_value);
             this.pnl_Electricity.Controls.Add(this.lbl_Electricity_CurrentUsage_value);
@@ -84,6 +94,86 @@
             this.pnl_Electricity.TabIndex = 5;
             this.pnl_Electricity.Visible = false;
             this.pnl_Electricity.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Electricity_Paint);
+            // 
+            // rdbtn_Electricity_Status_value_OFF
+            // 
+            this.rdbtn_Electricity_Status_value_OFF.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtn_Electricity_Status_value_OFF.AutoSize = true;
+            this.rdbtn_Electricity_Status_value_OFF.Location = new System.Drawing.Point(500, 31);
+            this.rdbtn_Electricity_Status_value_OFF.Name = "rdbtn_Electricity_Status_value_OFF";
+            this.rdbtn_Electricity_Status_value_OFF.Size = new System.Drawing.Size(92, 47);
+            this.rdbtn_Electricity_Status_value_OFF.TabIndex = 14;
+            this.rdbtn_Electricity_Status_value_OFF.TabStop = true;
+            this.rdbtn_Electricity_Status_value_OFF.Text = "OFF";
+            this.rdbtn_Electricity_Status_value_OFF.UseVisualStyleBackColor = true;
+            this.rdbtn_Electricity_Status_value_OFF.Click += new System.EventHandler(this.rdbtn_Electricity_Status_value_OFF_Click);
+            // 
+            // rdbtn_Electricity_Status_value_ON
+            // 
+            this.rdbtn_Electricity_Status_value_ON.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtn_Electricity_Status_value_ON.AutoSize = true;
+            this.rdbtn_Electricity_Status_value_ON.Location = new System.Drawing.Point(376, 29);
+            this.rdbtn_Electricity_Status_value_ON.Name = "rdbtn_Electricity_Status_value_ON";
+            this.rdbtn_Electricity_Status_value_ON.Size = new System.Drawing.Size(76, 47);
+            this.rdbtn_Electricity_Status_value_ON.TabIndex = 13;
+            this.rdbtn_Electricity_Status_value_ON.TabStop = true;
+            this.rdbtn_Electricity_Status_value_ON.Text = "ON";
+            this.rdbtn_Electricity_Status_value_ON.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Electricity_Status
+            // 
+            this.lbl_Electricity_Status.AutoSize = true;
+            this.lbl_Electricity_Status.Location = new System.Drawing.Point(12, 31);
+            this.lbl_Electricity_Status.Name = "lbl_Electricity_Status";
+            this.lbl_Electricity_Status.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_Status.TabIndex = 12;
+            this.lbl_Electricity_Status.Text = "label1";
+            // 
+            // lbl_Electricity_Season_value
+            // 
+            this.lbl_Electricity_Season_value.AutoSize = true;
+            this.lbl_Electricity_Season_value.Location = new System.Drawing.Point(374, 322);
+            this.lbl_Electricity_Season_value.Name = "lbl_Electricity_Season_value";
+            this.lbl_Electricity_Season_value.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_Season_value.TabIndex = 11;
+            this.lbl_Electricity_Season_value.Text = "label1";
+            // 
+            // lbl_Electricity_Season
+            // 
+            this.lbl_Electricity_Season.AutoSize = true;
+            this.lbl_Electricity_Season.Location = new System.Drawing.Point(12, 322);
+            this.lbl_Electricity_Season.Name = "lbl_Electricity_Season";
+            this.lbl_Electricity_Season.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_Season.TabIndex = 10;
+            this.lbl_Electricity_Season.Text = "label1";
+            // 
+            // lbl_Electricity_OFF_value
+            // 
+            this.lbl_Electricity_OFF_value.AutoSize = true;
+            this.lbl_Electricity_OFF_value.Location = new System.Drawing.Point(374, 464);
+            this.lbl_Electricity_OFF_value.Name = "lbl_Electricity_OFF_value";
+            this.lbl_Electricity_OFF_value.Size = new System.Drawing.Size(102, 37);
+            this.lbl_Electricity_OFF_value.TabIndex = 9;
+            this.lbl_Electricity_OFF_value.Text = "label2";
+            // 
+            // lbl_Electricity_ON_value
+            // 
+            this.lbl_Electricity_ON_value.AutoSize = true;
+            this.lbl_Electricity_ON_value.Location = new System.Drawing.Point(376, 390);
+            this.lbl_Electricity_ON_value.Name = "lbl_Electricity_ON_value";
+            this.lbl_Electricity_ON_value.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_ON_value.TabIndex = 8;
+            this.lbl_Electricity_ON_value.Text = "label1";
+            // 
+            // lbl_Electricity_CurrentUsage_value
+            // 
+            this.lbl_Electricity_CurrentUsage_value.AutoSize = true;
+            this.lbl_Electricity_CurrentUsage_value.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbl_Electricity_CurrentUsage_value.Location = new System.Drawing.Point(374, 259);
+            this.lbl_Electricity_CurrentUsage_value.Name = "lbl_Electricity_CurrentUsage_value";
+            this.lbl_Electricity_CurrentUsage_value.Size = new System.Drawing.Size(100, 37);
+            this.lbl_Electricity_CurrentUsage_value.TabIndex = 7;
+            this.lbl_Electricity_CurrentUsage_value.Text = "label1";
             // 
             // btn_Electricity_back
             // 
@@ -121,7 +211,7 @@
             // 
             this.lbl_SwitchOnTime.AutoSize = true;
             this.lbl_SwitchOnTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SwitchOnTime.Location = new System.Drawing.Point(12, 322);
+            this.lbl_SwitchOnTime.Location = new System.Drawing.Point(12, 390);
             this.lbl_SwitchOnTime.Name = "lbl_SwitchOnTime";
             this.lbl_SwitchOnTime.Size = new System.Drawing.Size(100, 37);
             this.lbl_SwitchOnTime.TabIndex = 3;
@@ -131,7 +221,7 @@
             // 
             this.lbl_CurrentBill.AutoSize = true;
             this.lbl_CurrentBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentBill.Location = new System.Drawing.Point(12, 185);
+            this.lbl_CurrentBill.Location = new System.Drawing.Point(12, 259);
             this.lbl_CurrentBill.Name = "lbl_CurrentBill";
             this.lbl_CurrentBill.Size = new System.Drawing.Size(100, 37);
             this.lbl_CurrentBill.TabIndex = 2;
@@ -141,7 +231,7 @@
             // 
             this.lbl_CurrentUsage.AutoSize = true;
             this.lbl_CurrentUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 61);
+            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 192);
             this.lbl_CurrentUsage.Name = "lbl_CurrentUsage";
             this.lbl_CurrentUsage.Size = new System.Drawing.Size(100, 37);
             this.lbl_CurrentUsage.TabIndex = 1;
@@ -149,9 +239,9 @@
             // 
             // prgBar_CurrentUsage
             // 
-            this.prgBar_CurrentUsage.Location = new System.Drawing.Point(381, 61);
+            this.prgBar_CurrentUsage.Location = new System.Drawing.Point(381, 192);
             this.prgBar_CurrentUsage.Name = "prgBar_CurrentUsage";
-            this.prgBar_CurrentUsage.Size = new System.Drawing.Size(363, 41);
+            this.prgBar_CurrentUsage.Size = new System.Drawing.Size(211, 37);
             this.prgBar_CurrentUsage.TabIndex = 0;
             // 
             // lbl_Main_CurrentPageDisplay
@@ -168,83 +258,79 @@
             // btn_CurrenUsage
             // 
             this.btn_CurrenUsage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_CurrenUsage.BackgroundImage = global::Prototype.Properties.Resources.CurrentUsage_icon;
+            this.btn_CurrenUsage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_CurrenUsage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_CurrenUsage.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_CurrenUsage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_CurrenUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CurrenUsage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_CurrenUsage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_CurrenUsage.Location = new System.Drawing.Point(381, 232);
             this.btn_CurrenUsage.Name = "btn_CurrenUsage";
             this.btn_CurrenUsage.Size = new System.Drawing.Size(372, 223);
             this.btn_CurrenUsage.TabIndex = 3;
             this.btn_CurrenUsage.Text = "Current Usage";
-            this.btn_CurrenUsage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_CurrenUsage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_CurrenUsage.UseVisualStyleBackColor = false;
             // 
             // btn_Heating
             // 
             this.btn_Heating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Heating.BackgroundImage = global::Prototype.Properties.Resources.heating_icon;
+            this.btn_Heating.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Heating.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Heating.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Heating.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Heating.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Heating.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_Heating.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Heating.Location = new System.Drawing.Point(3, 232);
             this.btn_Heating.Name = "btn_Heating";
             this.btn_Heating.Size = new System.Drawing.Size(372, 223);
             this.btn_Heating.TabIndex = 2;
             this.btn_Heating.Text = "Heating";
-            this.btn_Heating.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Heating.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Heating.UseVisualStyleBackColor = false;
             // 
             // btn_HotWater
             // 
             this.btn_HotWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_HotWater.BackgroundImage = global::Prototype.Properties.Resources.HotWater_icon;
+            this.btn_HotWater.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_HotWater.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_HotWater.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_HotWater.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_HotWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HotWater.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_HotWater.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_HotWater.Location = new System.Drawing.Point(381, 3);
             this.btn_HotWater.Name = "btn_HotWater";
             this.btn_HotWater.Size = new System.Drawing.Size(372, 223);
             this.btn_HotWater.TabIndex = 1;
             this.btn_HotWater.Text = "Hot Water";
-            this.btn_HotWater.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_HotWater.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_HotWater.UseVisualStyleBackColor = false;
             // 
             // btn_Electricity
             // 
             this.btn_Electricity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Electricity.BackgroundImage = global::Prototype.Properties.Resources.Electricity_icon;
+            this.btn_Electricity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Electricity.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Electricity.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Electricity.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Electricity.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Electricity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_Electricity.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Electricity.Location = new System.Drawing.Point(3, 3);
             this.btn_Electricity.Name = "btn_Electricity";
             this.btn_Electricity.Size = new System.Drawing.Size(372, 223);
             this.btn_Electricity.TabIndex = 0;
             this.btn_Electricity.Text = "Electricity";
-            this.btn_Electricity.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Electricity.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Electricity.UseVisualStyleBackColor = false;
             this.btn_Electricity.Click += new System.EventHandler(this.btn_Electricity_Click);
-            // 
-            // lbl_Electricity_CurrentUsage_value
-            // 
-            this.lbl_Electricity_CurrentUsage_value.AutoSize = true;
-            this.lbl_Electricity_CurrentUsage_value.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_Electricity_CurrentUsage_value.Location = new System.Drawing.Point(381, 185);
-            this.lbl_Electricity_CurrentUsage_value.Name = "lbl_Electricity_CurrentUsage_value";
-            this.lbl_Electricity_CurrentUsage_value.Size = new System.Drawing.Size(100, 37);
-            this.lbl_Electricity_CurrentUsage_value.TabIndex = 7;
-            this.lbl_Electricity_CurrentUsage_value.Text = "label1";
-            // 
-            // lbl_Electricity_ON_value
-            // 
-            this.lbl_Electricity_ON_value.AutoSize = true;
-            this.lbl_Electricity_ON_value.Location = new System.Drawing.Point(381, 322);
-            this.lbl_Electricity_ON_value.Name = "lbl_Electricity_ON_value";
-            this.lbl_Electricity_ON_value.Size = new System.Drawing.Size(100, 37);
-            this.lbl_Electricity_ON_value.TabIndex = 8;
-            this.lbl_Electricity_ON_value.Text = "label1";
-            // 
-            // lbl_Electricity_OFF_value
-            // 
-            this.lbl_Electricity_OFF_value.AutoSize = true;
-            this.lbl_Electricity_OFF_value.Location = new System.Drawing.Point(374, 464);
-            this.lbl_Electricity_OFF_value.Name = "lbl_Electricity_OFF_value";
-            this.lbl_Electricity_OFF_value.Size = new System.Drawing.Size(102, 37);
-            this.lbl_Electricity_OFF_value.TabIndex = 9;
-            this.lbl_Electricity_OFF_value.Text = "label2";
             // 
             // DEACT
             // 
@@ -284,6 +370,11 @@
         private System.Windows.Forms.Label lbl_Electricity_CurrentUsage_value;
         private System.Windows.Forms.Label lbl_Electricity_OFF_value;
         private System.Windows.Forms.Label lbl_Electricity_ON_value;
+        private System.Windows.Forms.Label lbl_Electricity_Season_value;
+        private System.Windows.Forms.Label lbl_Electricity_Season;
+        private System.Windows.Forms.RadioButton rdbtn_Electricity_Status_value_ON;
+        private System.Windows.Forms.Label lbl_Electricity_Status;
+        private System.Windows.Forms.RadioButton rdbtn_Electricity_Status_value_OFF;
     }
 }
 

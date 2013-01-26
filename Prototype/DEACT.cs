@@ -15,9 +15,11 @@ namespace Prototype
         public DEACT()
         {
             InitializeComponent();
+            billValue = new Bill();
             location = new Point(this.Width / 2 - 40, this.Height / 2 + 240);
         }
         #region myStuff
+        private Bill billValue;
         private enum EPageNumbers
         {
             Electricity = 0,
@@ -48,10 +50,11 @@ namespace Prototype
             m_nCurrentPage = (int)EPageNumbers.Electricity;
             this.lbl_Electricity_currentPageDispaly.Text = pageNames.PageNameCallback(m_nCurrentPage);
             lbl_Electricity_currentPageDispaly.Location = location;
-            lbl_Electricity_CurrentUsage_value.Text = "£110.83";
+            lbl_Electricity_CurrentUsage_value.Text = "£" + billValue.DisplayBill();
             lbl_Electricity_ON_value.Text = "08:00 AM";
             lbl_Electricity_OFF_value.Text = "11:30 PM";
             this.prgBar_CurrentUsage.Value = 80;
+            rdbtn_Electricity_Status_value_ON.Checked = true;
         }
 
         private void btn_Electricity_Click(object sender, EventArgs e)
@@ -63,6 +66,8 @@ namespace Prototype
             lbl_CurrentBill.Text = "Current Bill: ";
             lbl_SwitchOnTime.Text = "Switch ON: ";
             lbl_SwitchOffTime.Text = "Switch OFF: ";
+            lbl_Electricity_Season.Text = "Season: ";
+            lbl_Electricity_Season_value.Text = "Winter";
         }
 
         private void btn_Electricity_back_Click(object sender, EventArgs e)
@@ -80,6 +85,12 @@ namespace Prototype
         private void btn_RESET_Click(object sender, EventArgs e)
         {
             prgBar_CurrentUsage.Value = 67;
+        }
+
+        private void rdbtn_Electricity_Status_value_OFF_Click(object sender, EventArgs e)
+        {
+            rdbtn_Electricity_Status_value_ON.Checked = false;
+            rdbtn_Electricity_Status_value_OFF.Checked = true;
         }
     }
 }

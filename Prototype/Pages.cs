@@ -30,4 +30,30 @@ namespace Prototype
             return m_sPageNames[index];
         }
     }
+    class Bill
+    {
+        private float m_fCurrentBill;
+        public Bill()
+        {
+            m_fCurrentBill = 110.83F;
+        }
+        public virtual string DisplayBill()
+        {
+            return m_fCurrentBill.ToString();
+        }
+        public virtual float percentageResultFLOAT( int percenatage )
+        {
+            float temp = (float)percenatage;
+            temp = temp / 10;
+            temp = m_fCurrentBill * temp;
+            return temp;
+        }
+        public virtual String percentageResultSTRING(int percentages)
+        {
+            float temp = (float)percentages;
+            temp = temp / 100;
+            temp = m_fCurrentBill * temp;
+            return temp.ToString();
+        }
+    }
 }
