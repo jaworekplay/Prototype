@@ -47,14 +47,14 @@ namespace Prototype
 
         private void pnl_Electricity_Paint(object sender, PaintEventArgs e)
         {
-            m_nCurrentPage = (int)EPageNumbers.Electricity;
-            this.lbl_Electricity_currentPageDispaly.Text = pageNames.PageNameCallback(m_nCurrentPage);
-            lbl_Electricity_currentPageDispaly.Location = location;
-            lbl_Electricity_CurrentUsage_value.Text = "£" + billValue.DisplayBill();
-            lbl_Electricity_ON_value.Text = "08:00 AM";
-            lbl_Electricity_OFF_value.Text = "11:30 PM";
-            this.prgBar_CurrentUsage.Value = 80;
-            rdbtn_Electricity_Status_value_ON.Checked = true;
+            if (rdbtn_Electricity_Status_value_ON.Checked)
+                rdbtn_Electricity_Status_value_OFF.Checked = false;
+            else if (rdbtn_Electricity_Status_value_OFF.Checked)
+                rdbtn_Electricity_Status_value_ON.Checked = false;
+            if (rdbtn_Electricity_Status_value_OFF.Checked)
+                prgBar_CurrentUsage.Value = 0;
+            else
+                prgBar_CurrentUsage.Value = 80;
         }
 
         private void btn_Electricity_Click(object sender, EventArgs e)
@@ -68,6 +68,13 @@ namespace Prototype
             lbl_SwitchOffTime.Text = "Switch OFF: ";
             lbl_Electricity_Season.Text = "Season: ";
             lbl_Electricity_Season_value.Text = "Winter";
+            rdbtn_Electricity_Status_value_ON.Checked = true;
+            m_nCurrentPage = (int)EPageNumbers.Electricity;
+            this.lbl_Electricity_currentPageDispaly.Text = pageNames.PageNameCallback(m_nCurrentPage);
+            lbl_Electricity_currentPageDispaly.Location = location;
+            lbl_Electricity_CurrentUsage_value.Text = "£" + billValue.DisplayBill();
+            lbl_Electricity_ON_value.Text = "08:00 AM";
+            lbl_Electricity_OFF_value.Text = "11:30 PM";
         }
 
         private void btn_Electricity_back_Click(object sender, EventArgs e)
@@ -80,11 +87,6 @@ namespace Prototype
         {
             this.prgBar_CurrentUsage.Value = e.ProgressPercentage;
             this.Text = e.ProgressPercentage.ToString();
-        }
-
-        private void btn_RESET_Click(object sender, EventArgs e)
-        {
-            prgBar_CurrentUsage.Value = 67;
         }
 
         private void rdbtn_Electricity_Status_value_OFF_Click(object sender, EventArgs e)

@@ -30,6 +30,8 @@
         {
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Electricity = new System.Windows.Forms.Panel();
+            this.rdbtn_Electricity_UsageUnits_Pounds = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Electricity_UsageUnits_kWh = new System.Windows.Forms.RadioButton();
             this.rdbtn_Electricity_Status_value_OFF = new System.Windows.Forms.RadioButton();
             this.rdbtn_Electricity_Status_value_ON = new System.Windows.Forms.RadioButton();
             this.lbl_Electricity_Status = new System.Windows.Forms.Label();
@@ -71,6 +73,8 @@
             // 
             // pnl_Electricity
             // 
+            this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_UsageUnits_Pounds);
+            this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_UsageUnits_kWh);
             this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_Status_value_OFF);
             this.pnl_Electricity.Controls.Add(this.rdbtn_Electricity_Status_value_ON);
             this.pnl_Electricity.Controls.Add(this.lbl_Electricity_Status);
@@ -95,15 +99,40 @@
             this.pnl_Electricity.Visible = false;
             this.pnl_Electricity.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Electricity_Paint);
             // 
+            // rdbtn_Electricity_UsageUnits_Pounds
+            // 
+            this.rdbtn_Electricity_UsageUnits_Pounds.AutoCheck = false;
+            this.rdbtn_Electricity_UsageUnits_Pounds.AutoSize = true;
+            this.rdbtn_Electricity_UsageUnits_Pounds.Checked = true;
+            this.rdbtn_Electricity_UsageUnits_Pounds.Location = new System.Drawing.Point(518, 259);
+            this.rdbtn_Electricity_UsageUnits_Pounds.Name = "rdbtn_Electricity_UsageUnits_Pounds";
+            this.rdbtn_Electricity_UsageUnits_Pounds.Size = new System.Drawing.Size(53, 41);
+            this.rdbtn_Electricity_UsageUnits_Pounds.TabIndex = 16;
+            this.rdbtn_Electricity_UsageUnits_Pounds.TabStop = true;
+            this.rdbtn_Electricity_UsageUnits_Pounds.Text = "£";
+            this.rdbtn_Electricity_UsageUnits_Pounds.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_Electricity_UsageUnits_kWh
+            // 
+            this.rdbtn_Electricity_UsageUnits_kWh.AutoCheck = false;
+            this.rdbtn_Electricity_UsageUnits_kWh.AutoSize = true;
+            this.rdbtn_Electricity_UsageUnits_kWh.Location = new System.Drawing.Point(381, 259);
+            this.rdbtn_Electricity_UsageUnits_kWh.Name = "rdbtn_Electricity_UsageUnits_kWh";
+            this.rdbtn_Electricity_UsageUnits_kWh.Size = new System.Drawing.Size(100, 41);
+            this.rdbtn_Electricity_UsageUnits_kWh.TabIndex = 15;
+            this.rdbtn_Electricity_UsageUnits_kWh.Text = "kWh";
+            this.rdbtn_Electricity_UsageUnits_kWh.UseVisualStyleBackColor = true;
+            // 
             // rdbtn_Electricity_Status_value_OFF
             // 
             this.rdbtn_Electricity_Status_value_OFF.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtn_Electricity_Status_value_OFF.AutoCheck = false;
             this.rdbtn_Electricity_Status_value_OFF.AutoSize = true;
-            this.rdbtn_Electricity_Status_value_OFF.Location = new System.Drawing.Point(500, 31);
+            this.rdbtn_Electricity_Status_value_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdbtn_Electricity_Status_value_OFF.Location = new System.Drawing.Point(638, 31);
             this.rdbtn_Electricity_Status_value_OFF.Name = "rdbtn_Electricity_Status_value_OFF";
             this.rdbtn_Electricity_Status_value_OFF.Size = new System.Drawing.Size(92, 47);
             this.rdbtn_Electricity_Status_value_OFF.TabIndex = 14;
-            this.rdbtn_Electricity_Status_value_OFF.TabStop = true;
             this.rdbtn_Electricity_Status_value_OFF.Text = "OFF";
             this.rdbtn_Electricity_Status_value_OFF.UseVisualStyleBackColor = true;
             this.rdbtn_Electricity_Status_value_OFF.Click += new System.EventHandler(this.rdbtn_Electricity_Status_value_OFF_Click);
@@ -111,8 +140,10 @@
             // rdbtn_Electricity_Status_value_ON
             // 
             this.rdbtn_Electricity_Status_value_ON.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbtn_Electricity_Status_value_ON.AutoCheck = false;
             this.rdbtn_Electricity_Status_value_ON.AutoSize = true;
-            this.rdbtn_Electricity_Status_value_ON.Location = new System.Drawing.Point(376, 29);
+            this.rdbtn_Electricity_Status_value_ON.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdbtn_Electricity_Status_value_ON.Location = new System.Drawing.Point(383, 31);
             this.rdbtn_Electricity_Status_value_ON.Name = "rdbtn_Electricity_Status_value_ON";
             this.rdbtn_Electricity_Status_value_ON.Size = new System.Drawing.Size(76, 47);
             this.rdbtn_Electricity_Status_value_ON.TabIndex = 13;
@@ -159,7 +190,7 @@
             // lbl_Electricity_ON_value
             // 
             this.lbl_Electricity_ON_value.AutoSize = true;
-            this.lbl_Electricity_ON_value.Location = new System.Drawing.Point(376, 390);
+            this.lbl_Electricity_ON_value.Location = new System.Drawing.Point(374, 390);
             this.lbl_Electricity_ON_value.Name = "lbl_Electricity_ON_value";
             this.lbl_Electricity_ON_value.Size = new System.Drawing.Size(100, 37);
             this.lbl_Electricity_ON_value.TabIndex = 8;
@@ -169,7 +200,7 @@
             // 
             this.lbl_Electricity_CurrentUsage_value.AutoSize = true;
             this.lbl_Electricity_CurrentUsage_value.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_Electricity_CurrentUsage_value.Location = new System.Drawing.Point(374, 259);
+            this.lbl_Electricity_CurrentUsage_value.Location = new System.Drawing.Point(631, 259);
             this.lbl_Electricity_CurrentUsage_value.Name = "lbl_Electricity_CurrentUsage_value";
             this.lbl_Electricity_CurrentUsage_value.Size = new System.Drawing.Size(100, 37);
             this.lbl_Electricity_CurrentUsage_value.TabIndex = 7;
@@ -231,7 +262,7 @@
             // 
             this.lbl_CurrentUsage.AutoSize = true;
             this.lbl_CurrentUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 192);
+            this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 167);
             this.lbl_CurrentUsage.Name = "lbl_CurrentUsage";
             this.lbl_CurrentUsage.Size = new System.Drawing.Size(100, 37);
             this.lbl_CurrentUsage.TabIndex = 1;
@@ -239,9 +270,9 @@
             // 
             // prgBar_CurrentUsage
             // 
-            this.prgBar_CurrentUsage.Location = new System.Drawing.Point(381, 192);
+            this.prgBar_CurrentUsage.Location = new System.Drawing.Point(383, 167);
             this.prgBar_CurrentUsage.Name = "prgBar_CurrentUsage";
-            this.prgBar_CurrentUsage.Size = new System.Drawing.Size(211, 37);
+            this.prgBar_CurrentUsage.Size = new System.Drawing.Size(347, 37);
             this.prgBar_CurrentUsage.TabIndex = 0;
             // 
             // lbl_Main_CurrentPageDisplay
@@ -375,6 +406,8 @@
         private System.Windows.Forms.RadioButton rdbtn_Electricity_Status_value_ON;
         private System.Windows.Forms.Label lbl_Electricity_Status;
         private System.Windows.Forms.RadioButton rdbtn_Electricity_Status_value_OFF;
+        private System.Windows.Forms.RadioButton rdbtn_Electricity_UsageUnits_Pounds;
+        private System.Windows.Forms.RadioButton rdbtn_Electricity_UsageUnits_kWh;
     }
 }
 
