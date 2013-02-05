@@ -25,7 +25,7 @@ namespace Prototype
         {
             m_nNumberOfPages = numberOfPages;
         }
-        public virtual string PageNameCallback( int index = 0 ) // by default it will go to the main display
+        public virtual string PageNameCallback( int index = 8 ) // by default it will go to the main display
         {
             return m_sPageNames[index];
         }
