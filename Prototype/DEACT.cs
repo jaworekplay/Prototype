@@ -20,6 +20,7 @@ namespace Prototype
             g_Location = location;
             g_nHeight = this.Height;
             g_Width = this.Width;
+            
         }
         public int g_nHeight;
         public int g_Width;
@@ -76,6 +77,20 @@ namespace Prototype
         private void DEACT_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_HotWater_Click(object sender, EventArgs e)
+        {
+            htWtr = new Hot_Water();
+            this.Hide();
+            htWtr.Show();
+        }
+
+        private void btn_Heating_Click(object sender, EventArgs e)
+        {
+            htng = new Heating();
+            this.Hide();
+            htng.Show();
         }
     }
 }

@@ -24,28 +24,18 @@ namespace Prototype
         private Pages pageNames;
         private Bill bill;
 
-        private void btn_backToMain_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            MainWindow.Show();
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-            //lbl_PageName.Location = new Point(this.Width / 2 - 40, this.Height / 2 + 240);
-            if (rdbtn_currency.Checked)
-                lbl_Bill.Text = bill.DisplayBill();
-            else
-                lbl_Bill.Text = bill.DisplayBill(true);
-            lbl_PageName.Text = pageNames.PageNameCallback(0);
-        }
-
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
             if (!rdbtn_StatusON.Checked)
+            {
                 splCtn.Panel1.BackColor = System.Drawing.Color.IndianRed;
+                prgbr.Value = 0;
+            }
             else
+            {
                 splCtn.Panel1.BackColor = System.Drawing.Color.PaleGreen;
+                prgbr.Value = 80;
+            }
         }
 
         private void Electricity_MouseClick(object sender, MouseEventArgs e)
@@ -62,6 +52,25 @@ namespace Prototype
         {
             lbl_PageName.Text = pageNames.PageNameCallback(0);
 
+        }
+
+        private void Electricity_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainWindow.Show();
+        }
+
+        private void splCtn_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+            lbl_Bill.Text = bill.DisplayBill(false);
+        }
+
+        private void splCtn_Click(object sender, EventArgs e)
+        {
+            if (rdbtn_kWh.Checked)
+                lbl_Bill.Text = bill.DisplayBill(false);
+            else
+                lbl_Bill.Text = bill.DisplayBill(true);
+            splCtn.Panel2.Refresh();
         }
     }
 }

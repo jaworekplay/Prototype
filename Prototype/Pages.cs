@@ -39,21 +39,21 @@ namespace Prototype
             m_fCurrentBillPounds = 110.83F;
             m_fCurrentBillkWh = 13.150F;
         }
-        public virtual string DisplayBill(bool inkWh = false)
+        public string DisplayBill(bool inkWh)
         {
             if (inkWh)
                 return m_fCurrentBillkWh.ToString();
             else
                 return m_fCurrentBillPounds.ToString();
         }
-        public virtual float percentageResultFLOAT( int percenatage )
+        public float percentageResultFLOAT( int percenatage )
         {
             float temp = (float)percenatage;
             temp = temp / 10;
             temp = m_fCurrentBillPounds * temp;
             return temp;
         }
-        public virtual String percentageResultSTRING(int percentages)
+        public String percentageResultSTRING(int percentages)
         {
             float temp = (float)percentages;
             temp = temp / 100;

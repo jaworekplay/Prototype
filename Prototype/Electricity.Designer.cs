@@ -41,7 +41,6 @@
             this.lbl_SwitchON = new System.Windows.Forms.Label();
             this.lbl_CurrentBill = new System.Windows.Forms.Label();
             this.lbl_CurrentUsage = new System.Windows.Forms.Label();
-            this.btn_backToMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splCtn)).BeginInit();
             this.splCtn.Panel1.SuspendLayout();
             this.splCtn.Panel2.SuspendLayout();
@@ -65,7 +64,7 @@
             // 
             // splCtn.Panel2
             // 
-            this.splCtn.Panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splCtn.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.splCtn.Panel2.Controls.Add(this.lbl_Bill);
             this.splCtn.Panel2.Controls.Add(this.rdbtn_currency);
             this.splCtn.Panel2.Controls.Add(this.rdbtn_kWh);
@@ -75,18 +74,18 @@
             this.splCtn.Panel2.Controls.Add(this.lbl_SwitchON);
             this.splCtn.Panel2.Controls.Add(this.lbl_CurrentBill);
             this.splCtn.Panel2.Controls.Add(this.lbl_CurrentUsage);
-            this.splCtn.Panel2.Controls.Add(this.btn_backToMain);
-            this.splCtn.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splCtn.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splCtn_Panel2_Paint);
             this.splCtn.Size = new System.Drawing.Size(746, 583);
             this.splCtn.SplitterDistance = 81;
             this.splCtn.TabIndex = 0;
+            this.splCtn.Click += new System.EventHandler(this.splCtn_Click);
             // 
             // rdbtn_StatusOFF
             // 
             this.rdbtn_StatusOFF.Appearance = System.Windows.Forms.Appearance.Button;
             this.rdbtn_StatusOFF.AutoSize = true;
             this.rdbtn_StatusOFF.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_StatusOFF.Location = new System.Drawing.Point(642, 25);
+            this.rdbtn_StatusOFF.Location = new System.Drawing.Point(642, 12);
             this.rdbtn_StatusOFF.Name = "rdbtn_StatusOFF";
             this.rdbtn_StatusOFF.Size = new System.Drawing.Size(92, 47);
             this.rdbtn_StatusOFF.TabIndex = 2;
@@ -99,7 +98,7 @@
             this.rdbtn_StatusON.AutoSize = true;
             this.rdbtn_StatusON.Checked = true;
             this.rdbtn_StatusON.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_StatusON.Location = new System.Drawing.Point(412, 25);
+            this.rdbtn_StatusON.Location = new System.Drawing.Point(326, 12);
             this.rdbtn_StatusON.Name = "rdbtn_StatusON";
             this.rdbtn_StatusON.Size = new System.Drawing.Size(76, 47);
             this.rdbtn_StatusON.TabIndex = 1;
@@ -121,6 +120,7 @@
             // 
             this.lbl_Bill.AutoSize = true;
             this.lbl_Bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Bill.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_Bill.Location = new System.Drawing.Point(643, 92);
             this.lbl_Bill.Name = "lbl_Bill";
             this.lbl_Bill.Size = new System.Drawing.Size(100, 37);
@@ -132,6 +132,7 @@
             this.rdbtn_currency.AutoSize = true;
             this.rdbtn_currency.Checked = true;
             this.rdbtn_currency.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtn_currency.ForeColor = System.Drawing.SystemColors.Control;
             this.rdbtn_currency.Location = new System.Drawing.Point(546, 90);
             this.rdbtn_currency.Name = "rdbtn_currency";
             this.rdbtn_currency.Size = new System.Drawing.Size(53, 41);
@@ -144,6 +145,7 @@
             // 
             this.rdbtn_kWh.AutoSize = true;
             this.rdbtn_kWh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtn_kWh.ForeColor = System.Drawing.SystemColors.Control;
             this.rdbtn_kWh.Location = new System.Drawing.Point(412, 90);
             this.rdbtn_kWh.Name = "rdbtn_kWh";
             this.rdbtn_kWh.Size = new System.Drawing.Size(100, 41);
@@ -155,6 +157,7 @@
             // 
             this.lbl_PageName.AutoSize = true;
             this.lbl_PageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PageName.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.lbl_PageName.Location = new System.Drawing.Point(302, 422);
             this.lbl_PageName.Name = "lbl_PageName";
             this.lbl_PageName.Size = new System.Drawing.Size(100, 37);
@@ -173,6 +176,7 @@
             // 
             this.lbl_SwitchOFF.AutoSize = true;
             this.lbl_SwitchOFF.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SwitchOFF.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_SwitchOFF.Location = new System.Drawing.Point(12, 238);
             this.lbl_SwitchOFF.Name = "lbl_SwitchOFF";
             this.lbl_SwitchOFF.Size = new System.Drawing.Size(254, 37);
@@ -183,6 +187,7 @@
             // 
             this.lbl_SwitchON.AutoSize = true;
             this.lbl_SwitchON.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SwitchON.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_SwitchON.Location = new System.Drawing.Point(12, 165);
             this.lbl_SwitchON.Name = "lbl_SwitchON";
             this.lbl_SwitchON.Size = new System.Drawing.Size(238, 37);
@@ -193,6 +198,7 @@
             // 
             this.lbl_CurrentBill.AutoSize = true;
             this.lbl_CurrentBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentBill.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_CurrentBill.Location = new System.Drawing.Point(12, 92);
             this.lbl_CurrentBill.Name = "lbl_CurrentBill";
             this.lbl_CurrentBill.Size = new System.Drawing.Size(175, 37);
@@ -203,22 +209,12 @@
             // 
             this.lbl_CurrentUsage.AutoSize = true;
             this.lbl_CurrentUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CurrentUsage.ForeColor = System.Drawing.SystemColors.Control;
             this.lbl_CurrentUsage.Location = new System.Drawing.Point(12, 19);
             this.lbl_CurrentUsage.Name = "lbl_CurrentUsage";
             this.lbl_CurrentUsage.Size = new System.Drawing.Size(225, 37);
             this.lbl_CurrentUsage.TabIndex = 1;
             this.lbl_CurrentUsage.Text = "Current Usage";
-            // 
-            // btn_backToMain
-            // 
-            this.btn_backToMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_backToMain.Location = new System.Drawing.Point(546, 388);
-            this.btn_backToMain.Name = "btn_backToMain";
-            this.btn_backToMain.Size = new System.Drawing.Size(200, 85);
-            this.btn_backToMain.TabIndex = 0;
-            this.btn_backToMain.Text = "Back to Main Menu";
-            this.btn_backToMain.UseVisualStyleBackColor = true;
-            this.btn_backToMain.Click += new System.EventHandler(this.btn_backToMain_Click);
             // 
             // Electricity
             // 
@@ -230,8 +226,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Electricity";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Electricity";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Electricity_FormClosing);
             this.Load += new System.EventHandler(this.Electricity_Load);
             this.Leave += new System.EventHandler(this.Electricity_Leave);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Electricity_MouseClick);
@@ -256,7 +254,6 @@
         private System.Windows.Forms.Label lbl_SwitchON;
         private System.Windows.Forms.Label lbl_CurrentBill;
         private System.Windows.Forms.Label lbl_CurrentUsage;
-        private System.Windows.Forms.Button btn_backToMain;
         private System.Windows.Forms.Label lbl_PageName;
         private System.Windows.Forms.Label lbl_Bill;
         private System.Windows.Forms.RadioButton rdbtn_currency;

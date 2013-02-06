@@ -95,6 +95,7 @@
             this.btn_Heating.TabIndex = 2;
             this.btn_Heating.Text = "Heating";
             this.btn_Heating.UseVisualStyleBackColor = false;
+            this.btn_Heating.Click += new System.EventHandler(this.btn_Heating_Click);
             // 
             // btn_HotWater
             // 
@@ -112,6 +113,7 @@
             this.btn_HotWater.TabIndex = 1;
             this.btn_HotWater.Text = "Hot Water";
             this.btn_HotWater.UseVisualStyleBackColor = false;
+            this.btn_HotWater.Click += new System.EventHandler(this.btn_HotWater_Click);
             // 
             // btn_Electricity
             // 
@@ -140,6 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "DEACT";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DEACT";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DEACT_FormClosing);
